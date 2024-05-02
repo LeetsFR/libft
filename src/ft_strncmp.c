@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcollas <mcollas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/01 13:12:13 by mcollas           #+#    #+#             */
-/*   Updated: 2024/05/01 13:12:14 by mcollas          ###   ########.fr       */
+/*   Created: 2024/05/02 02:11:31 by mcollas           #+#    #+#             */
+/*   Updated: 2024/05/02 02:11:32 by mcollas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+int	ft_strncmp(const char *first, const char *second, size_t n)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	size_t	i;
+
+	i = 0;
+	while (first[i] && second[i] && first[i] == second[i] && i < n)
+		i++;
+	return (first[i] - second[i]);
 }
